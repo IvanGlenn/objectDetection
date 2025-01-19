@@ -1,8 +1,6 @@
 from ultralytics import YOLO
 import cv2
-import math
 
-# start webcam
 cap = cv2.VideoCapture(0)
 cap.set(3, 640)
 cap.set(4, 480)
@@ -10,7 +8,7 @@ cap.set(4, 480)
 # Load the model
 model = YOLO("yolo-Weights/yolov8n.pt")
 
-# Teh classes that the model will recognise. The model is pretrained to all these classes
+# The classes that the model will recognise. The model is pretrained to all these classes
 classNames = ["person", "bicycle", "car", "motorbike", "aeroplane", "bus", "train", "truck", "boat",
               "traffic light", "fire hydrant", "stop sign", "parking meter", "bench", "bird", "cat",
               "dog", "horse", "sheep", "cow", "elephant", "bear", "zebra", "giraffe", "backpack", "umbrella",
