@@ -9,9 +9,6 @@ class FaceRecognition:
     process_current_frame = True
 
     def __init__(self):
-        # encode faces
-        # self.encode_faces()
-        # pass
         self.run_recognition()
 
     def run_recognition(self):
@@ -20,7 +17,6 @@ class FaceRecognition:
         while True:
             ret, frame = video_capture.read()
 
-            # if self.process_current_frame:
             # Resize the frames
             small_frame = cv2.resize(frame, (0, 0), fx=0.25, fy=0.25)
             # OpenCV uses BGR and not RGB for some reason
@@ -31,8 +27,6 @@ class FaceRecognition:
 
             self.face_tags = []
             self.face_tags.extend([f'Face {k + 1}' for k in range(len(self.face_positions))])
-
-            # self.process_current_frame = not self.process_current_frame
 
             # Display annotations. The 'zip' function combines face_positions and face_tags lists and allows them to
             # be iterated over in parallel.
